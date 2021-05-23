@@ -9,8 +9,8 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginPage implements OnInit {
 
-  public user: String = 'dani';
-  public pass: String = '1234';
+  public user: String;
+  public pass: String;
   
 
   constructor(private loginService: LoginService, private router: Router) {
