@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>DwTube - Llista Recursos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let recurs of recursos">
+    <ion-card-header [routerLink]="['/recursos/recurs', recurs.id]">
+      <ion-card-title>{{recurs.titol}}: {{recurs.disponibilitat}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{recurs.descripcio}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

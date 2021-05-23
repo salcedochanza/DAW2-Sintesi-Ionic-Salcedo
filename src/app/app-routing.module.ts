@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'recursos/:id',
+    loadChildren: () => import('./pages/list-recursos/list-recursos.module').then( m => m.ListRecursosPageModule)
+  },
+  {
+    path: 'recursos/recurs/:id',
+    loadChildren: () => import('./pages/show-recurs/show-recurs.module').then( m => m.ShowRecursPageModule)
+  },
 ];
 
 @NgModule({
