@@ -10,11 +10,15 @@
           <img src="../../../assets/img/logo.png" alt="Logo DWTube" class="img-logo">
           DwTube
         </ion-item>
+        <ion-item (click)="goToHome()">
+          <img src="../../../assets/img/home.png" class="card-img-top" alt="Imatge usuari">
+          Inici
+        </ion-item>
         <ion-item *ngIf="logged" (click)="goToPerfil()">
           <img src="../../../assets/img/user.png" class="card-img-top" alt="Imatge usuari">
           Perfil
         </ion-item>
-        <ion-item *ngIf="convidat">
+        <ion-item *ngIf="convidat" (click)="goToLogin()">
           <img src="../../../assets/img/login.png" class="card-img-top" alt="Imatge login">
           Login
         </ion-item>

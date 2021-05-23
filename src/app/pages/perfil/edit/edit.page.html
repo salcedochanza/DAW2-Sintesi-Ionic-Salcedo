@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>DwTube - Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Editar Perfil</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" >Nom de usuari</ion-label>
+        <ion-input name="user" [(ngModel)]="user"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contrasenya</ion-label>
+        <ion-input name="password" [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input name="firstName" [(ngModel)]="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Cognoms</ion-label>
+        <ion-input name="lastName" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Email</ion-label>
+        <ion-input name="email" [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Número de movil</ion-label>
+        <ion-input name="phone" [(ngModel)]="phone" type="tel"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-button expand="block" (click)="editProfile()">Modifica perfil</ion-button>
+  </ion-card>
+</ion-content>

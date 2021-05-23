@@ -20,11 +20,8 @@ export class AppComponent {
     if (user != null){
       this.logged = true;
       this.convidat = false;
-
       this.rol = user.rol;
     }
-    
-    console.log(this.logged);
   }
 
   openFirst() {
@@ -34,11 +31,28 @@ export class AppComponent {
 
   logout(){
     localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });
     this.menu.close('first');
   }
 
   goToPerfil(){
-    this.router.navigate(['/perfil']);
+    this.router.navigate(['/perfil']).then(() => {
+      window.location.reload();
+    });
+    this.menu.close('first');
+  }
+  goToLogin(){
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });
+    this.menu.close('first');
+  }
+  goToHome(){
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
+    this.menu.close('first');
   }
 }
