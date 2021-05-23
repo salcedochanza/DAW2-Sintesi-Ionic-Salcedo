@@ -1,3 +1,29 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <img src="../../../assets/img/logo.png" alt="Logo DWTube" class="img-logo">
+          DwTube
+        </ion-item>
+        <ion-item *ngIf="logged" (click)="goToPerfil()">
+          <img src="../../../assets/img/user.png" class="card-img-top" alt="Imatge usuari">
+          Perfil
+        </ion-item>
+        <ion-item *ngIf="convidat">
+          <img src="../../../assets/img/login.png" class="card-img-top" alt="Imatge login">
+          Login
+        </ion-item>
+        <ion-item *ngIf="logged" (click)="logout()">
+          <img src="../../../assets/img/logout.png" class="card-img-top logout" alt="Imatge sortida">
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
