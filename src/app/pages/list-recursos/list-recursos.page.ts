@@ -51,4 +51,17 @@ export class ListRecursosPage implements OnInit {
     }
   }
 
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
+  goToPerfil(){
+    this.router.navigate(['/perfil']);
+  }
+
+  goToHome(){
+    this.router.navigate(['/home']);
+  }
+
 }

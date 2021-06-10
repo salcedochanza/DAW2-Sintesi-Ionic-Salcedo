@@ -10,12 +10,25 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{titol}}</ion-card-title>
+      <ion-card-title>{{titol | titlecase}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      {{descripcio}}<br><hr>
-      {{explicacio}}
+      <div>
+        {{explicacio | titlecase}}
+      </div>
+      <div *ngIf="tipus == '1'">
+        <img [src]="videorecurs" alt="imatge">
+      </div>
+      <div *ngIf="tipus == '2'">
+          <img [src]="videorecurs" alt="document">
+      </div>
+      <div *ngIf="tipus == '3'">
+          <iframe style="width: 100%; height: 400px;" [src]="videorecurs" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div *ngIf="tipus == '4'">
+          <img [src]="canvas" alt="canvas" style="width: 100%;">
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>
