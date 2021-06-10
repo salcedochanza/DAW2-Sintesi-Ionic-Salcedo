@@ -24,6 +24,7 @@
       <ion-card-title>
         <div class="card-content-disponibilitat">
           {{recurs.titol | titlecase}}
+          <span (click)="addFavoritos(recurs.id)" class="favoritos"><img src="../../../assets/img/star.png" class="card-img-top" alt="Estrella"></span>
           <span *ngIf="recurs.tipus_disponibilitat == 1"><img src="../../../assets/img/users-group.png" class="card-img-top" alt="Imatge Grup Usuaris"> {{recurs.disponibilitat | titlecase}}</span>
           <span *ngIf="recurs.tipus_disponibilitat == 2"><img src="../../../assets/img/padlock.png" class="card-img-top" alt="Imatge Candau"> {{recurs.disponibilitat | titlecase}}</span>
           <span *ngIf="recurs.tipus_disponibilitat == 3"><img src="../../../assets/img/key.png" class="card-img-top" alt="Imatge Clau"> Codi</span>
