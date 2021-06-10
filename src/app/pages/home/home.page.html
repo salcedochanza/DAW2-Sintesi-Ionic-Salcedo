@@ -8,9 +8,33 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <div>
+    <span *ngFor="let singlePath of path">
+        <span class="pointer" (click)="getCategories(singlePath.id)">{{singlePath.nom | titlecase}}</span> |
+    </span>
+  </div>
   <ion-card *ngFor="let category of categories">
-    <ion-card-header [routerLink]="['/recursos', category.id]">
-      <ion-card-title>{{category.id}}: {{category.name}}</ion-card-title>
+    <ion-card-header (click)="getCategories(category.id)">
+      <ion-card-title>{{category.name | titlecase}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <hr>
+  <ion-card *ngFor="let recurs of recursos">
+    <ion-card-header [routerLink]="['/recursos/recurs', recurs.id]">
+      <ion-card-title>
+        <div class="card-content-disponibilitat">
+          {{recurs.titol | titlecase}}
+          <span *ngIf="recurs.tipus_disponibilitat == 1"><img src="../../../assets/img/users-group.png" class="card-img-top" alt="Imatge Grup Usuaris"> {{recurs.disponibilitat | titlecase}}</span>
+          <span *ngIf="recurs.tipus_disponibilitat == 2"><img src="../../../assets/img/padlock.png" class="card-img-top" alt="Imatge Candau"> {{recurs.disponibilitat | titlecase}}</span>
+          <span *ngIf="recurs.tipus_disponibilitat == 3"><img src="../../../assets/img/key.png" class="card-img-top" alt="Imatge Clau"> Codi</span>
+          <span *ngIf="recurs.tipus_disponibilitat == 4"><img src="../../../assets/img/open-lock.png" class="card-img-top" alt="Imatge Candau obert"> Public</span>
+        </div>
+      </ion-card-title>
+      <ion-card-content>
+        <div class="card-content">
+          {{recurs.descripcio | titlecase}}
+        </div>
+      </ion-card-content>
     </ion-card-header>
   </ion-card>
 </ion-content>
